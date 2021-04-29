@@ -1,6 +1,6 @@
 # Discover the Unknown Biased Attribute of an Image Classifier
 
-<img src="images/teaser.pdf" alt="teaser" style="zoom:200%;" />
+<img src="images/teaser.jpg" alt="teaser" style="zoom:100%;" />
 
 
 
