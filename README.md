@@ -40,7 +40,7 @@ The classifier (first column)'s target prediction's probability (second column) 
 
 
 
-For example, the ResNet-18 classifier trained on ImageNet's predicted probability on the "Cat" class gradually decreases as the cat's shade of fur color goes darker.
+For example, the ResNet-18 classifier trained on ImageNet's predicted probability of the "Cat" class gradually decreases as the cat's shade of fur color goes darker.
 
 
 
