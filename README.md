@@ -33,13 +33,14 @@ To solve this challenging problem, we use a hyperplane in the generative model's
 ## Citation
 
 ```
-@misc{li2021discover,
-      title={Discover the Unknown Biased Attribute of an Image Classifier}, 
-      author={Zhiheng Li and Chenliang Xu},
-      year={2021},
-      eprint={2104.14556},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+@article{li-2021-discover,
+  title = {Discover the {{Unknown Biased Attribute}} of an {{Image Classifier}}},
+  author = {Li, Zhiheng and Xu, Chenliang},
+  year = {2021},
+  archiveprefix = {arXiv},
+  eprint = {2104.14556},
+  eprinttype = {arxiv},
+  journal = {arXiv:2104.14556 [cs]}
 }
 ```
 
