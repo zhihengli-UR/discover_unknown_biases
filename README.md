@@ -1,4 +1,4 @@
-# Discover the Unknown Biased Attribute of an Image Classifier
+# Discover the Unknown Biased Attribute of an Image Classifier [ICCV'21]
 
 <img src="images/teaser.jpg" alt="teaser" style="zoom:100%;" />
 
@@ -63,14 +63,11 @@ For example, the ResNet-18 classifier trained on ImageNet's predicted probabilit
 ## Citation
 
 ```
-@article{li-2021-discover,
+@inproceedings{li-2021-discover,
   title = {Discover the {{Unknown Biased Attribute}} of an {{Image Classifier}}},
+  booktitle = {The {{IEEE International Conference}} on {{Computer Vision}} ({{ICCV}})},
   author = {Li, Zhiheng and Xu, Chenliang},
   year = {2021},
-  archiveprefix = {arXiv},
-  eprint = {2104.14556},
-  eprinttype = {arxiv},
-  journal = {arXiv:2104.14556 [cs]}
 }
 ```
 
