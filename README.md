@@ -16,7 +16,7 @@ University of Rochester
 
 **Preprint**: https://arxiv.org/abs/2104.14556
 
-**Contact**: Zhiheng Li (zhiheng.li@rochester.edu)
+**Contact**: Zhiheng Li (email: zhiheng.li@rochester.edu, homepage: https://zhiheng.li)
 
 
 
@@ -52,11 +52,85 @@ For example, the ResNet-18 classifier trained on ImageNet's predicted probabilit
 | ResNet-18 Trained on Places365 [2] |        Conference Room        | layout of conference room (table \$\rightarrow$ hollow square table / no table) | ![conferenceroom_1](images/conferenceroom/1.gif) | ![confereceroom_2](images/conferenceroom/2.gif) |
 | ResNet-18 Trained on Places365 [2] |             Tower             |  is Eiffel Tower (Eiffel tower $\rightarrow$ other towers)   | ![tower_1](images/tower/1.gif) |                ![tower_2](images/tower/2.gif)                |
 
+
+
+## Dependencies
+
+disentanglement_lib
+
+```bash
+pip install disentanglement-lib
+```
+
+PyTorch
+
+torchvision
+
+
+
+## Dataset
+
+**dSprites**:
+
+```bash
+wget -O data/dsprites/dsprites_ndarray_co1sh3sc6or40x32y32_64x64.npz https://github.com/deepmind/dsprites-dataset/blob/master/dsprites_ndarray_co1sh3sc6or40x32y32_64x64.npz?raw=true
+```
+
+**SmallNorb**:
+
+1. Download the gz files from https://cs.nyu.edu/~ylclab/data/norb-v1.0-small/
+
+2. decompress the files into `data/small_norb`
+
+
+
+## Experiment on Disentanglement Datasets
+
+Step 1: train a biased target attribute classifier
+
+```bash
+bash scripts/synthetic/train_classifier.sh
+```
+
+Step 2: train a generative model, e.g., $\beta$-VAE.
+
+```bash
+bash scripts/synthetic/train_generative_model.sh
+```
+
+Step 3: encode images to the latent space via the encoder in the VAE-based model
+
+```bash
+bash scripts/synthetic/gen_latent_code.sh
+```
+
+Step 4: generate the ground-truth hyperplanes
+
+```bash
+bash scripts/synthetic/gen_gt_hyperplanes.sh
+```
+
+Step 5: optimize TV loss and orthogonalization penalty to get biased attribute hyperplane, i.e., discover the unknown biased attribute
+
+```bash
+bash scripts/synthetic/discover_unknown_bias.sh
+```
+
+Step 6: visualize the traversal images to interpret the bias
+
+```bash
+bash scripts/synthetic/visualize.sh
+```
+
+
+
 ### References
 
 [1] J. Deng, W. Dong, R. Socher, L.-J. Li, Kai Li, and Li Fei-Fei, “ImageNet: A large-scale hierarchical image database,” in *The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)*, Jun. 2009, pp. 248–255.
 
 [2] B. Zhou, A. Lapedriza, A. Khosla, A. Oliva, and A. Torralba, “Places: A 10 million image database for scene recognition,” *IEEE Transactions on Pattern Analysis and Machine Intelligence*, vol. 40, no. 6, pp. 1452–1464, 2018.
+
+The code of "experiment on disentanglement datasets" is based on [Disentanglement-PyTorch](https://github.com/amir-abdi/disentanglement-pytorch).
 
 
 
